@@ -39,13 +39,14 @@ import io.reactivex.disposables.Disposable;
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.ACCESS_FINE_LOCATION
         },
-        permissionRequestCode = PluginRequestCodes.GEOLOCATION_REQUEST_PERMISSIONS
+        permissionRequestCode = FusedLocation.FUSE_REQUEST_CODE
 )
 public class FusedLocation extends Plugin {
     private Map<String, Disposable> callIdToDisposable = new HashMap<>();
     private Map<String, Observable<Location>> callIdToObservable = new HashMap<>();
     private RxLocation mRxLocation;
 
+    static final int FUSE_REQUEST_CODE = 12121;
     @PluginMethod()
     public void getCurrentPosition(PluginCall call) {
         Log.d(getLogTag(), "Requesting current position");
