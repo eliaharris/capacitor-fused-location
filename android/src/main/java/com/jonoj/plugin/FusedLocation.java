@@ -1,4 +1,4 @@
-package com.jonoj.plugin;
+package com.eliaharris.plugin;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
